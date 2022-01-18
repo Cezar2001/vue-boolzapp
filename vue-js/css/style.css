@@ -159,6 +159,14 @@ ul > li{
     height: calc(100% - 140px);
 }
 
+.user-message{
+    background-color: #c2ff9b;
+}
+
+.friend-message{
+    background-color: white;
+}
+
 /* footer */
 
 .footer{
