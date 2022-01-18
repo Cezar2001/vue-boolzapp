@@ -15,12 +15,12 @@
     
     <div id="app">
 
-        <div>
-            <img src="contacts[currentIndex].avatar" class="img-container">
-        </div>
-
+        
         <ul>
-            <li v-for="contact in contacts">
+            <li v-for="(contact, currentIndex) in contacts">
+                <div>
+                    <img :src="'img/avatar' + contacts[currentIndex].avatar + '.jpg'" class="img-container">
+                </div>
                 <span> {{ contact.name }} </span>
             </li>
         </ul>
