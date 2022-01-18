@@ -1,0 +1,11 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.img-container{
+   object-fit: contain;
+   height: 100px;
+   background-repeat: no-repeat; 
+}
