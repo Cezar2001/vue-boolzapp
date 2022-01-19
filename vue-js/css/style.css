@@ -182,16 +182,10 @@ ul > li{
 
 .user-message{
     background-color: #c2ff9b;
-    /* float: right; */
-    /* display: flex;
-    justify-content: end; */
 }
 
 .friend-message{
     background-color: white;
-    /* float: left; */
-    /* display: flex; */
-    /* justify-content: start; */
 }
 
 .right{
