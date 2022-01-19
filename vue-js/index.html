@@ -87,7 +87,8 @@
                 </div>
 
                 <div class="chat">
-                    <div v-for="(messages, i) in contacts[currentIndex].messages">
+                    <div v-for="(messages, i) in contacts[currentIndex].messages" class="flex"
+                    :class="[messages.status === 'sent' ? 'right' : 'left']">
                             
                         <div :class="['message chat-message', messages.status === 'sent' ? 'user-message' : 'friend-message']">                                
                             <span>
@@ -106,7 +107,7 @@
                 
                 <footer class="footer">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio" @keyup.enter="">
+                    <input type="text" placeholder="Scrivi un messaggio" @keyup.enter="chatMessage">
                     <i class="fas fa-microphone"></i>
                 </footer>
                 

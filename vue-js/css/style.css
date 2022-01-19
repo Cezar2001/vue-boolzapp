@@ -167,7 +167,7 @@ ul > li{
 .chat-contact > div > span:last-child,
 .message > span:last-child{
     color: #777;
-    font-size: small;
+    font-size: 13px;
 }
 
 .chat{
@@ -177,28 +177,36 @@ ul > li{
 }
 
 .chat-message{
-    display: flex;
     margin-bottom: 10px;
 }
 
 .message{
-    padding: 15px 20px;
+    padding: 10px 20px;
     border-radius: 10px;
 }
 
 .user-message{
     background-color: #c2ff9b;
-    justify-content: end;
 }
 
 .friend-message{
     background-color: white;
-    justify-content: start;
 }
 
 .message > span:last-child{
-    position: absolute;
-    margin-top: 17px;
+    margin: 10px 0 0 90px;
+}
+
+.flex{
+    display: flex;
+}
+
+.right{
+    justify-content: end;
+}
+
+.left{
+    justify-content: start;
 }
 
 /* footer */

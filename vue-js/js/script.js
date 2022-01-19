@@ -88,13 +88,19 @@ new Vue ({
             },
         ],
         currentIndex: 0,
+        newMessage: '',
     },
     methods: {
         currentContact: function (i) {
             this.currentIndex = i;
         },
         chatMessage: function () {
-            
+            // this.messages.push(this.newMessage),
+            // this.newMessage={
+            //     text: ''
+            let myMessage = {text: this.newMessage, messages: status.sent}
+            this.tasks.push(myMessage)
+            this.newMessage = ''
         },
     }
 })
