@@ -87,6 +87,15 @@ new Vue ({
                 ],
             },
         ],
-        currentIndex: 0,  
+        currentIndex: 0,
+        messagesIndex: 0,  
     },
+    methods: {
+        currentContact: function (i) {
+            this.currentIndex = i;
+        },
+        chatMessage: function () {
+
+        }
+    }
 })

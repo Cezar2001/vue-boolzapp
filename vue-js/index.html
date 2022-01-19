@@ -49,9 +49,13 @@
 
                 <div class="container-contacts">
                     <ul>
-                        <li v-for="(contact, currentIndex) in contacts">
+                        <li 
+                        v-for="(contact, i) in contacts"
+                        @click="currentContact(i)"
+                        :class="[i === currentIndex ? 'grey' : '']"
+                         >
                             <div class="contact-list">
-                                <img :src="'img/avatar' + contacts[currentIndex].avatar + '.jpg'" class="contact-photo">
+                                <img :src="'img/avatar' + contact.avatar + '.jpg'" class="contact-photo">
                                 <span> {{ contact.name }} </span>
                             </div>
                         </li>
@@ -63,7 +67,16 @@
         
             <div class="main">
                 <div class="friend">
-                    <div class="stampare-contact"></div>
+                    
+                    <div class="chat-contact">  
+                        <img :src="'img/avatar' + contacts[currentIndex].avatar + '.jpg'" class="contact-photo">
+                        <div>
+                            <span>{{ contacts[currentIndex].name }}</span>
+                            </br>
+                            <span>Ultimo accesso oggi alle</span>
+                        </div>
+                    </div>
+                    
                     <div class="icons-chat">
                         <i class="fas fa-search"></i>
                         <i class="fas fa-paperclip"></i>
@@ -72,7 +85,21 @@
                 </div>
 
                 <div class="chat">
-
+                    <div v-for="(messages, i) in contacts">
+                        
+                        <div class="right">
+                            <span class="message user-message">
+                                {{ contacts[currentIndex].messages[messagesIndex].text }}   
+                            </span>
+                        </div>
+        
+                        <div class="left">
+                            <span class="message friend-message">
+                                {{ contacts[currentIndex].messages[messagesIndex].text }}
+                            </span>
+                        </div>
+                        
+                    </div>
                 </div>     
 
                 <!-- footer -->
