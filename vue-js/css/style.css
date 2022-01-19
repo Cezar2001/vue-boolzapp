@@ -153,7 +153,7 @@ ul > li{
 }
 
 .chat-contact{
-    width: 610px;
+    width: 600px;
     height: 80px;
     display: flex;
     align-items: center;
@@ -164,7 +164,8 @@ ul > li{
     margin-left: 10px;
 }
 
-.chat-contact > div > span:last-child{
+.chat-contact > div > span:last-child,
+.message > span:last-child{
     color: #777;
     font-size: small;
 }
@@ -175,30 +176,29 @@ ul > li{
     padding: 50px;
 }
 
+.chat-message{
+    display: flex;
+    margin-bottom: 10px;
+}
+
 .message{
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: 10px;
 }
 
 .user-message{
     background-color: #c2ff9b;
+    justify-content: end;
 }
 
 .friend-message{
     background-color: white;
-}
-
-.right, .left{
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.right{
-    justify-content: end;
-}
-
-.left{
     justify-content: start;
+}
+
+.message > span:last-child{
+    position: absolute;
+    margin-top: 17px;
 }
 
 /* footer */

@@ -44,7 +44,9 @@
 
                 <div class="search-chat">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat" @keyup.enter="" class="research-chat">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" 
+                    @keyup.enter="searchContact" class="research-chat"
+                    >
                 </div>
 
                 <div class="container-contacts">
@@ -85,20 +87,18 @@
                 </div>
 
                 <div class="chat">
-                    <div v-for="(messages, i) in contacts">
-                        
-                        <div class="right">
-                            <span class="message user-message">
-                                {{ contacts[currentIndex].messages[messagesIndex].text }}   
+                    <div v-for="(messages, i) in contacts[currentIndex].messages">
+                            
+                        <div :class="['message chat-message', messages.status === 'sent' ? 'user-message' : 'friend-message']">                                
+                            <span>
+                                {{ messages.text }}  
                             </span>
-                        </div>
-        
-                        <div class="left">
-                            <span class="message friend-message">
-                                {{ contacts[currentIndex].messages[messagesIndex].text }}
+                            </br>
+                            <span>
+                                {{ messages.date }}
                             </span>
-                        </div>
-                        
+                        </div> 
+                                                 
                     </div>
                 </div>     
 
