@@ -114,18 +114,18 @@ new Vue ({
             })
         },
         // piccoli problemi con remove message
-        // removeChatMessage: function (i) {
-        //     this.contacts[currentIndex].messages[currentIndex].text.splice(i, 1);
-        //     let messaggio = this.contacts[currentIndex];
-        //     this.messages.splice(i, messaggio) 
-        //  }
+        removeChatMessage: function (i) {
+            this.contacts[currentIndex].messages[currentIndex].text.splice(i, 1);
+            let messaggio = this.contacts[currentIndex];
+            this.messages.splice(i, messaggio) 
+         }
     }
 })
 
 function dropDownMenu() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
-  window.onclick = function(event) {
+  menuWindow = function(event) {
     if (!event.target.matches('.dropbtn')) {
       let dropdowns = document.getElementsByClassName("dropdown-content");
       let i;
