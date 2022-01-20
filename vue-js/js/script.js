@@ -89,7 +89,7 @@ new Vue ({
         ],
         currentIndex: 0,
         newMessage: '',
-        researchContact: 'i' + 'e',
+        researchContact: 'i',
     },
     methods: {
         currentContact: function (i) {

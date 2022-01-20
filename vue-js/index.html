@@ -45,9 +45,7 @@
 
                 <div class="search-chat">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat" 
-                    @keyup.enter="researchContact" class="research-chat"
-                    v-if="contacts.name.toLowerCase(),includes(researchContact)">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" class="research-chat">
                 </div>
 
                 <div class="container-contacts">
@@ -56,6 +54,7 @@
                         v-for="(contact, i) in contacts"
                         @click="currentContact(i)"
                         :class="[i === currentIndex ? 'grey' : '']"
+                        v-if="contact.name.toLowerCase().includes(researchContact)"
                          >
                             <div class="contact-list">
                                 <img :src="'img/avatar' + contact.avatar + '.jpg'" class="contact-photo">
