@@ -89,18 +89,29 @@ new Vue ({
         ],
         currentIndex: 0,
         newMessage: '',
+        researchContact: 'i' + 'e',
     },
     methods: {
         currentContact: function (i) {
             this.currentIndex = i;
         },
-        chatMessage: function () {
-            // this.messages.push(this.newMessage),
-            // this.newMessage={
-            //     text: ''
-            let myMessage = {text: this.newMessage, messages: status.sent}
-            this.tasks.push(myMessage)
-            this.newMessage = ''
+        chatMessage(contact) {
+            contact.messages.push({
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                text: this.newMessage,
+                status: 'sent'
+            })
+            this.newMessage = '';
+            setTimeout (() => {
+                this.botReply(contact)
+            }, 1000)
         },
+        botReply(contact) {
+            contact.messages.push({
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                text: 'Ok',
+                status: 'received'
+            })
+        }
     }
 })

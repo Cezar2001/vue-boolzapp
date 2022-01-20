@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>    
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 </head>
@@ -45,8 +46,8 @@
                 <div class="search-chat">
                     <i class="fas fa-search"></i>
                     <input type="text" placeholder="Cerca o inizia una nuova chat" 
-                    @keyup.enter="searchContact" class="research-chat"
-                    >
+                    @keyup.enter="researchContact" class="research-chat"
+                    v-if="contacts.name.toLowerCase(),includes(researchContact)">
                 </div>
 
                 <div class="container-contacts">
@@ -107,7 +108,9 @@
                 
                 <footer class="footer">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio" @keyup.enter="chatMessage">
+                    <input type="text" placeholder="Scrivi un messaggio"
+                    v-model= "newMessage"
+                    @keyup.enter="chatMessage(contacts[currentIndex])">
                     <i class="fas fa-microphone"></i>
                 </footer>
                 

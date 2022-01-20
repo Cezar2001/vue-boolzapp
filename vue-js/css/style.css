@@ -51,6 +51,10 @@
     background-color: rgb(223, 223, 223);
 }
 
+.user > span{
+    margin-left: 5px;
+}
+
 .contact-photo, .user-photo{
     height: 50px;
     width: 50px; 
@@ -183,6 +187,7 @@ ul > li{
 .message{
     padding: 10px 20px;
     border-radius: 10px;
+    box-shadow: 0 0 5px #999;
 }
 
 .user-message{
@@ -194,7 +199,8 @@ ul > li{
 }
 
 .message > span:last-child{
-    margin: 10px 0 0 90px;
+    float: right;
+    margin-top: 2px;
 }
 
 .flex{
