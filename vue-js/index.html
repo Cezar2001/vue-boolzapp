@@ -94,6 +94,15 @@
                             <span>
                                 {{ messages.text }}  
                             </span>
+                           
+                            <div class="dropdown">
+                                <i class="fas fa-chevron-down dropbtn" onclick="dropDownMenu()"></i>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a>Message info</a>
+                                    <a @click="removeChatMessage(i)">Delete message</a>
+                                  </div>
+                            </div>
+                            
                             </br>
                             <span>
                                 {{ messages.date }}

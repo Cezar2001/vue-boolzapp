@@ -112,6 +112,28 @@ new Vue ({
                 text: 'Ok',
                 status: 'received'
             })
-        }
+        },
+        // piccoli problemi con remove message
+        // removeChatMessage: function (i) {
+        //     this.contacts[currentIndex].messages[currentIndex].text.splice(i, 1);
+        //     let messaggio = this.contacts[currentIndex];
+        //     this.messages.splice(i, messaggio) 
+        //  }
     }
 })
+
+function dropDownMenu() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      let dropdowns = document.getElementsByClassName("dropdown-content");
+      let i;
+      for (i = 0; i < dropdowns.length; i++) {
+        let openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
